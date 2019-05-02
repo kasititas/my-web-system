@@ -1,10 +1,34 @@
-# WEB system
+# Weather_Broadcast
 - [ ] Replace "WEB system" with your system name
 
 ## Description
 - [ ] Provide WEB system description in few sentences - its purpose, users, etc.
+The main aim of this system is to show what the weather is like in a certain area that a user is searching for. You can type a name of the city or a zip code in the search box and it returns a box that displays the temperature, weather description, wind speed, humidity.
+
 
 ## Entity definition
+city
+    city.id City ID(number) 
+    city.name City name(string)
+temperature
+    temperature.value Temperature(number)
+    temperature.unit Unit of measurements. Possilbe valure is Celsius, Kelvin, Fahrenheit.(string)
+humidity
+    humidity.value Humidity value(number)
+    humidity.unit %(string)
+wind
+    wind.speed
+    wind.speed.value Wind speed, mps
+clouds
+    clouds.value Cloudiness (string)
+    clouds.name Name of the cloudiness (string)
+weather
+    weather.number Weather condition id (number)
+    weather.value Weather condition name (string)
+    weather.icon Weather icon id (number)
+
+q city name and country code divided by comma, use ISO 3166 country codes
+
 - [ ] Define the entity ("object" that will be manipulated) of WEB system
 - [ ] Entity should have a name
 - [ ] Entity should have 3 mandatory attributes:
@@ -16,6 +40,22 @@
     - [ ] Each attribute should have restrictions defined: list of constants, or number range, or string length, or string format, or object schema, or array schema or other. For example, you can use `joi` language to define restrictions: https://github.com/hapijs/joi/blob/v13.1.2/API.md
 
 ## API definition
+Failed to load recource: the http://api.openweathermap.org/data/2.5/weather?q=belekas&APPID=de411aae5b9451c85c25d4dd42326856&units=metric server responded with a status of 404 (Not Found)
+
+Uncaught (in promise) TypeError: Cannot read property '0' of undefined
+
+API call:
+GET api.openweathermap.org/data/2.5/weather?q={city name}
+metric: api.openweathermap.org/data/2.5/find?q=London&units=metric
+imperial: api.openweathermap.org/data/2.5/find?q=London&units=imperial
+standard: api.openweathermap.org/data/2.5/find?q=London
+
+Get weather icon: GET "http://openweathermap.org/img/w/"400 - {error:404 'Not Found'}
+
+Post: api.openweathermap.org/data/2.5/weather?q={city name} -{error:404 'Not found'}
+
+
+
 - [ ] Define specific service (konkrečios paslaugos) API methods that WEB system is going to use
 - [ ] Optionally define additional API methods that WEB system is going to expose
 - [ ] API should have at least 4 methods
@@ -33,6 +73,8 @@
 - [ ] Should return all 5xx errors in unified format. Define format using `joi` language
 
 ## UI definition
+https://wireframe.cc/iNWOd7
+
 - [ ] Define the structure of how visually the WEB system is going to look like
 - [ ] Should have at least one view defined with https://wireframe.cc (or other wireframe tool):
 - [ ] The view should have a title
