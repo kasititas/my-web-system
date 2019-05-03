@@ -17,8 +17,7 @@ humidity
     humidity.value Humidity value(number(length=100))
     humidity.unit %(string(length=20))
 wind
-    wind.speed
-    wind.speed.value Wind speed, mps
+    wind.speed.value Wind speed, mps(number(length=20))
 clouds
     clouds.value Cloudiness (string)
     clouds.name Name of the cloudiness (string)
@@ -51,8 +50,9 @@ imperial: api.openweathermap.org/data/2.5/find?q=London&units=imperial
 standard: api.openweathermap.org/data/2.5/find?q=London
 
 Get weather icon: GET "http://openweathermap.org/img/w/"400 - {error:404 'Not Found'}
-Delete: 
+Delete weather: DELETE /:weather by city name-ERROR 500 Couldn't create a list in your system (server error)
 Post: api.openweathermap.org/data/2.5/weather?q={city name} -{error:404 'Not found'}
+
 
 
 
