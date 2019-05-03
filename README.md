@@ -8,14 +8,14 @@ The main aim of this system is to show what the weather is like in a certain are
 
 ## Entity definition
 city
-    city.id City ID(number) 
-    city.name City name(string)
+    city.id City ID(number(length=1000000)) 
+    city.name City name(string(length(50))
 temperature
-    temperature.value Temperature(number)
-    temperature.unit Unit of measurements. Possilbe valure is Celsius, Kelvin, Fahrenheit.(string)
+    temperature.value Temperature(number(length=300))
+    temperature.unit Unit of measurements. Possilbe valure is Celsius, Kelvin, Fahrenheit.(string(length=50))
 humidity
-    humidity.value Humidity value(number)
-    humidity.unit %(string)
+    humidity.value Humidity value(number(length=100))
+    humidity.unit %(string(length=20))
 wind
     wind.speed
     wind.speed.value Wind speed, mps
@@ -51,7 +51,7 @@ imperial: api.openweathermap.org/data/2.5/find?q=London&units=imperial
 standard: api.openweathermap.org/data/2.5/find?q=London
 
 Get weather icon: GET "http://openweathermap.org/img/w/"400 - {error:404 'Not Found'}
-
+Delete: 
 Post: api.openweathermap.org/data/2.5/weather?q={city name} -{error:404 'Not found'}
 
 
