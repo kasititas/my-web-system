@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Weather App | Home</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+        <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="row">
+                    <div id="branding">
+                        <h1><span class="highlight">Weather</span> Broadcast</h1>
+                    </div>
+                    <ul class="main-nav">
+                        <li class="current"><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div id="searchContainer">
+            <input class="searchControl" type="text" placeholder="City name or Zipcode" id="searchInput">
+            <button class="searchControl" id="searchBtn">Search</button>
+        </div>
+        <div id="weatherContainer">
+            <div id="weatherDescription">
+                <h1 id="cityHeader"></h1>
+                <div id="weatherMain">
+                    <div id="temperature"></div>
+                    <div id="weatherDescriptionHeader"></div>
+                    <div><img id="documentIconImg"></div>
+                </div>
+                <hr>
+                <div id="windSpeed" class="bottomDetails"></div>
+                <div id="humidity" class="bottomDetails"></div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+        
+        <!--<script src="script.js"></script>-->
+    </body>
+
+</html>
